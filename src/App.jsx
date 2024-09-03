@@ -1,5 +1,11 @@
+import Counter from "./components/counter";
 const App = () => {
-  <h1>First React App</h1>;
+  return (
+    <>
+      <Counter itemName="Jackets"></Counter>
+      <Counter itemName="Shirts"></Counter>
+      <Counter itemName="pents"></Counter>
+    </>
+  );
 };
-
 export default App;
