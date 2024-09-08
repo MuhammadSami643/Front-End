@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import "../css/product.css";
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
   const fetchProducts = async () => {
@@ -23,12 +23,12 @@ const ProductPage = () => {
     <>
       <h1>This Is Products Page</h1>
 
-      <div>
+      <div className="products-container">
         {products.map((product) => (
-          <div key={product.id}>
-            <img src={product.image} alt="product" />
-            <h2>Price :{product.price}</h2>
-            <p>Title :{product.title}</p>
+          <div key={product.id} className="product-card">
+            <img src={product.image} alt={product.title} />
+            <h2>Price: ${product.price}</h2>
+            <p>Title: {product.title}</p>
             <button onClick={() => handleDelete(product.id)}>Delete</button>
           </div>
         ))}
