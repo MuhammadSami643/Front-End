@@ -35,7 +35,7 @@ const ProductPage = () => {
         return true;
       }
     });
-
+    console.log(searchResult);
     setSearchedProducts(searchResult);
   };
 
