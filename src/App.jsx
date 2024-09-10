@@ -7,6 +7,9 @@ import ErrorPage from "./pages/ErrorPage";
 import UserAuth from "./pages/userAuth";
 import LogIn from "./pages/login";
 import SignUp from "./pages/signUp";
+import PrivateRoute from "./components/Private-Route";
+import Layout from "./components/Layout";
+import Footer from "./components/Footer";
 
 // User-Auth -> Nested Routing
 //Index-Route -> A route which has default path like / and by default its value is true, it's a boolean value, It's route exactly like its parent Route, One Index Route for one Parent, rnder when parent URL satisfies
@@ -15,11 +18,28 @@ const App = () => {
   return (
     <>
       {/* <Home /> */}
-      <Navbar />
+
       <Routes>
-        <Route index={true} element={<Home />} />
-        <Route path="/" element={<Home />} />
-        <Route path="products" element={<ProductPage />} />
+        {/* <Route index element={<Home />} /> */}
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <Home />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="products"
+          element={
+            <PrivateRoute>
+              <Layout>
+                <ProductPage />
+              </Layout>
+            </PrivateRoute>
+          }
+        />
         <Route path="product-details/:id?" element={<ProductDetails />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path="user-auth">
