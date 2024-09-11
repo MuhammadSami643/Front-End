@@ -1,15 +1,12 @@
-import Navbar from "./components/navbar";
 import Home from "./pages/home";
 import ProductPage from "./pages/products";
 import { Route, Routes } from "react-router-dom";
 import ProductDetails from "./pages/product-details";
 import ErrorPage from "./pages/ErrorPage";
-import UserAuth from "./pages/userAuth";
 import LogIn from "./pages/login";
 import SignUp from "./pages/signUp";
 import PrivateRoute from "./components/Private-Route";
 import Layout from "./components/Layout";
-import Footer from "./components/Footer";
 
 // User-Auth -> Nested Routing
 //Index-Route -> A route which has default path like / and by default its value is true, it's a boolean value, It's route exactly like its parent Route, One Index Route for one Parent, rnder when parent URL satisfies
@@ -54,6 +51,7 @@ const App = () => {
           <Route path="login" element={<LogIn />} />
           <Route path="signup" element={<SignUp />} />
         </Route>
+        <Route path="signup" element={<SignUp />} />
       </Routes>
     </>
   );
