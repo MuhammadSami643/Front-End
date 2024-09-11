@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <>
-      <h1>This is Footer</h1>
+      <h1 style={{ backgroundColor: "yellow" }}>This is Footer</h1>
     </>
   );
 };
