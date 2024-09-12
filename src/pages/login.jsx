@@ -1,7 +1,9 @@
+import LogInComponent from "../components/login";
+
 const LogIn = () => {
   return (
     <>
-      <h1>Login Page </h1>
+      <LogInComponent />
     </>
   );
 };
