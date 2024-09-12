@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Counter from "../components/counter";
+import { userAuthContext } from "../contexts/userAuthContext";
 
 const Home = () => {
   const [items, setItems] = useState(["Jeans", "Jackets", "Shirts"]);
@@ -15,8 +16,11 @@ const Home = () => {
     setUserInput("");
   };
 
+  const x = useContext(userAuthContext);
+
   return (
     <>
+      <p>{x.isLoggedIn}</p>
       <input
         value={userInput}
         onChange={inputChangeHandler}
