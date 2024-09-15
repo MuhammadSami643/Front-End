@@ -49,7 +49,10 @@ const ProductPage = () => {
             <img src={product.image} alt={product.title} />
             <h2>Price: ${product.price}</h2>
             <p>Title: {product.title}</p>
-            <button onClick={() => handleDelete(product.id)}>Delete</button>
+            <div className="buttons">
+              <button onClick={() => handleDelete(product.id)}>Delete</button>
+              <button>Add to Cart</button>
+            </div>
           </div>
         ))}
       </div>

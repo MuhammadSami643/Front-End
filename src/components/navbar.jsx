@@ -2,14 +2,52 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <>
-      <h1 style={{ backgroundColor: "green" }}>Navbar</h1>
+    <nav className="w-full bg-gray-800 text-white shadow-md">
+      <div className="container mx-auto flex items-center justify-between p-0">
+        <div className="text-2xl font-bold">
+          <p className="m-0 p-0">Saym Store</p>
+        </div>
 
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/products">Products</NavLink>
-      <NavLink to="/user-auth/login">Login</NavLink>
-      <NavLink to="/signup">Signup</NavLink>
-    </>
+        <ul className="m-0 flex list-none space-x-8 p-0">
+          <li>
+            <NavLink
+              to="/"
+              className="text-white no-underline transition-colors duration-300 hover:text-yellow-400"
+              activeClassName="border-b-2 border-yellow-400"
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/products"
+              className="text-white no-underline transition-colors duration-300 hover:text-yellow-400"
+              activeClassName="border-b-2 border-yellow-400"
+            >
+              Products
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/user-auth/login"
+              className="text-white no-underline transition-colors duration-300 hover:text-yellow-400"
+              activeClassName="border-b-2 border-yellow-400"
+            >
+              Login
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/signup"
+              className="text-white no-underline transition-colors duration-300 hover:text-yellow-400"
+              activeClassName="border-b-2 border-yellow-400"
+            >
+              Signup
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 };
 
