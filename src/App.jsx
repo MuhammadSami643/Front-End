@@ -8,6 +8,7 @@ import SignUp from "./pages/signUp";
 import PrivateRoute from "./components/Private-Route";
 import Layout from "./components/Layout";
 import "../index.css";
+import AddToCart from "./pages/addToCart";
 
 // User-Auth -> Nested Routing
 //Index-Route -> A route which has default path like / and by default its value is true, it's a boolean value, It's route exactly like its parent Route, One Index Route for one Parent, rnder when parent URL satisfies
@@ -53,6 +54,7 @@ const App = () => {
           <Route path="signup" element={<SignUp />} />
         </Route>
         <Route path="signup" element={<SignUp />} />
+        <Route path="add-to-cart" element={<AddToCart />} />
       </Routes>
     </>
   );

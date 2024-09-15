@@ -44,6 +44,13 @@ const Navbar = () => {
             >
               Signup
             </NavLink>
+            <NavLink
+              to="/add-to-cart"
+              className="text-white no-underline transition-colors duration-300 hover:text-yellow-400"
+              activeClassName="border-b-2 border-yellow-400"
+            >
+              <img src="public/5163709.png" alt="Logo" className="h-8" />
+            </NavLink>
           </li>
         </ul>
       </div>
