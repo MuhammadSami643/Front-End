@@ -68,10 +68,15 @@ const LogInComponent = () => {
           <input
             value={values.password}
             onChange={handleChange}
+            onBlur={handleBlur}
             type="password"
             id="password"
             placeholder="Enter your Password"
-            className="w-full rounded-full border border-gray-300 px-3 py-2 shadow-sm hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className={`w-full rounded-full border px-3 py-2 shadow-sm ${
+              errors.password && touched.password
+                ? "border-2 border-red-400"
+                : "border-gray-300"
+            } focus:outline-none focus:ring-2 focus:ring-blue-500`}
           />
           {errors.password && touched.password && (
             <p className="mt-1 text-sm text-red-500">{errors.password}</p>
