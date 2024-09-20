@@ -1,6 +1,12 @@
-import { createStore } from "redux";
+import { combineReducers, createStore } from "redux";
 import cakeReducer from "./cakeReducer";
+import iceCreamReducer from "./iceCream/iceCreamReducer";
 
-const reduxStore = createStore(cakeReducer);
+const rootReducer = combineReducers({
+  cakes: cakeReducer,
+  iceCream: iceCreamReducer,
+});
+
+const reduxStore = createStore(rootReducer);
 
 export default reduxStore;

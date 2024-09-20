@@ -1,21 +1,40 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
-  buyVanillaCakeAction,
-  refundVanillaCakeAction,
+  buyVanillaCakeActionCreator,
+  refundVanillaCakeActionCreator,
 } from "../redux/cakeActions";
+import { useState } from "react";
+import {
+  buyStrawberyCakeActionCreator,
+  refundStrawberyCakeActionCreator,
+} from "../redux/iceCream/iceCreamAction";
 
 const Redux = () => {
   const dispatch = useDispatch();
-  const abc = useSelector((x) => {
-    return x;
+
+  const [userInput, setUserInput] = useState();
+
+  const cake = useSelector((x) => {
+    return x.cakes;
   });
-  console.log(abc);
+
+  const ice = useSelector((x) => {
+    return x.iceCream;
+  });
+
   return (
     <>
-      <h1>Vanilla Cakes:{abc.vanillaCakes}</h1>
+      <input
+        placeholder="number"
+        type="number"
+        onChange={(e) => {
+          setUserInput(Number(e.target.value));
+        }}
+      />
+      <h1>Vanilla Cakes:{cake.vanillaCakes}</h1>
       <button
         onClick={() => {
-          dispatch(buyVanillaCakeAction);
+          dispatch(buyVanillaCakeActionCreator(userInput));
         }}
       >
         Buy Vanilla Cake
@@ -23,10 +42,29 @@ const Redux = () => {
 
       <button
         onClick={() => {
-          dispatch(refundVanillaCakeAction);
+          dispatch(refundVanillaCakeActionCreator(userInput));
         }}
       >
         Refund Vanilla Cake
+      </button>
+
+      <br />
+
+      <h1>Strawbery Cakes:{ice.iceCream}</h1>
+      <button
+        onClick={() => {
+          dispatch(buyStrawberyCakeActionCreator(userInput));
+        }}
+      >
+        Refund Strawbery Cake
+      </button>
+
+      <button
+        onClick={() => {
+          dispatch(refundStrawberyCakeActionCreator(userInput));
+        }}
+      >
+        Refund Strawbery Cake
       </button>
     </>
   );
